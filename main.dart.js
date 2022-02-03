@@ -63897,7 +63897,7 @@ return A.a4($async$u_,r)}}
 A.Zp.prototype={}
 A.F8.prototype={
 O(a,b){var s=A.ajH(null,B.eE)
-return new A.w0(A.aL(["/",new A.Vt(),"/show_and_accept_terms",new A.Vu(),"/display_analysis",new A.Vv(),"/impressum",new A.Vw()],t.N,t.Ab),"/","Heart-Work-Culator",s,null)}}
+return new A.w0(A.aL(["/input_data",new A.Vt(),"/show_and_accept_terms",new A.Vu(),"/display_analysis",new A.Vv(),"/impressum",new A.Vw()],t.N,t.Ab),"/input_data","Heart-Work-Culator",s,null)}}
 A.Vt.prototype={
 $1(a){return B.AH},
 $S:383}
