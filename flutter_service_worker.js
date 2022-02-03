@@ -31,7 +31,7 @@ const RESOURCES = {
 // The application shell files that are downloaded before a service worker can
 // start.
 const CORE = [
-  "/",
+  "/heart_work_culator_web_app/",
 "main.dart.js",
 "index.html",
 "assets/NOTICES",
