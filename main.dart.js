@@ -63957,7 +63957,7 @@ return A.a3($async$u2,r)}}
 A.ZO.prototype={}
 A.Fi.prototype={
 O(a,b){var s=A.akg(null,B.dj)
-return new A.w9(A.aJ(["/input_data",new A.VR(),"/show_and_accept_terms",new A.VS(),"/privacy_policy",new A.VT(),"/display_analysis",new A.VU(),"/impressum",new A.VV()],t.N,t.Ab),"/input_data","Heart-Work-Culator",s,null)}}
+return new A.w9(A.aJ(["/input_data",new A.VR(),"/welcome_disclaimer",new A.VS(),"/privacy_policy",new A.VT(),"/display_analysis",new A.VU(),"/impressum",new A.VV()],t.N,t.Ab),"/input_data","Heart-Work-Culator",s,null)}}
 A.VR.prototype={
 $1(a){return B.AN},
 $S:383}
@@ -64207,7 +64207,7 @@ A.a6R.prototype={
 $0(){var s=A.o2(J.aa(this.b.a,"terms_have_been_accepted"))
 if(s!==!0){s=this.a.c
 s.toString
-A.c2(s,!1).kj("/show_and_accept_terms",null,t.X)}},
+A.c2(s,!1).kj("/welcome_disclaimer",null,t.X)}},
 $S:0}
 A.a74.prototype={
 $1(a){this.a.ch=A.h2(a)},
@@ -64382,7 +64382,7 @@ $S:35}
 A.aa1.prototype={
 $0(){var s=this.a,r=A.aev(s)
 if(r!=null&&r.ze())A.c2(s,!1).dG(0,null)
-else A.c2(s,!1).kj("/show_and_accept_terms",null,t.X)},
+else A.c2(s,!1).kj("/welcome_disclaimer",null,t.X)},
 $S:0}
 A.nm.prototype={
 ax(){return new A.Oa(new A.bd(null,t.am),B.k)}}
@@ -64416,7 +64416,7 @@ return null},
 $S:115}
 A.a9W.prototype={
 $1(a){var s,r=null,q=this.a,p=this.b,o=t.p
-o=A.b([A.q8(A.b([A.ahY(new A.a9T(q,a),q.e),A.pJ("I agree to the terms of service and to the [privacy\xa0policy](https://github.com/DominikBitzer/heart_work_culator/blob/master/assets/privacy_policy.md).",new A.a9U(p))],o),B.ax,B.ak,r)],o)
+o=A.b([A.q8(A.b([A.ahY(new A.a9T(q,a),q.e),A.pJ("I agree to the terms of service \n\nand to the [privacy\xa0policy](https://github.com/DominikBitzer/heart_work_culator/blob/master/assets/privacy_policy.md).",new A.a9U(p))],o),B.ax,B.ak,r)],o)
 if(!a.gbC()){q=a.e
 q=A.t(q).j("cw.T").a(q.y)
 if(q==null)q=""
