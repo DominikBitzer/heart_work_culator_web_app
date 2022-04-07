@@ -64172,7 +64172,7 @@ if(!c.d.gaa().qh())return
 s=A.r(t.N,t.i)
 r=[0.35695,-7.2266,74.249,-307.39,684.54,-856.92,571.95,-159.1]
 q=A.a(c.ch,"input_1_preejection_period")/A.a(c.cx,"input_2_systolic_period")
-for(p=0,o=1;o<=7;++o)p+=r[o-1]*Math.pow(q,o)
+for(p=0,o=1;o<=8;++o)p+=r[o-1]*Math.pow(q,o)
 s.m(0,"E_Nd(avg)",p)
 n=A.a(c.db,b)-A.a(c.cy,a)
 s.m(0,"stroke_volume",n)
