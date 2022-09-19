@@ -10,21 +10,23 @@ const RESOURCES = {
 "assets/assets/pvl_diagram.png": "72f7d9f6b4efdc07199b9bf2ed5c75f9",
 "assets/assets/terms_of_service.md": "213b3a5b92c789c7a4b3baa8974069cc",
 "assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
-"assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
-"assets/NOTICES": "1e0a1d67869a0ee8daf1fac9049b8b9c",
+"assets/fonts/MaterialIcons-Regular.otf": "95db9098c58fd6db106f1116bae85a0b",
+"assets/NOTICES": "f5137ca8548155f6713dec7976a51a51",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
-"canvaskit/canvaskit.js": "62b9906717d7215a6ff4cc24efbd1b5c",
-"canvaskit/canvaskit.wasm": "b179ba02b7a9f61ebc108f82c5a1ecdb",
-"canvaskit/profiling/canvaskit.js": "3783918f48ef691e230156c251169480",
-"canvaskit/profiling/canvaskit.wasm": "6d1b0fc1ec88c3110db88caa3393c580",
+"assets/shaders/ink_sparkle.frag": "ca53bda77dec6803d356069e4294e22c",
+"canvaskit/canvaskit.js": "2bc454a691c631b07a9307ac4ca47797",
+"canvaskit/canvaskit.wasm": "bf50631470eb967688cca13ee181af62",
+"canvaskit/profiling/canvaskit.js": "38164e5a72bdad0faa4ce740c9b8e564",
+"canvaskit/profiling/canvaskit.wasm": "95a45378b69e77af5ed2bc72b2209b94",
 "favicon.png": "045203ae17ed3415521ed34b4ea116bd",
+"flutter.js": "f85e6fb278b0fd20c349186fb46ae36d",
 "icons/Icon-192.png": "921252773ecf6842c5fb6cdf715d421d",
 "icons/Icon-512.png": "e0d37315686cafbd2c7366621b3c5869",
 "icons/Icon-maskable-192.png": "921252773ecf6842c5fb6cdf715d421d",
 "icons/Icon-maskable-512.png": "e0d37315686cafbd2c7366621b3c5869",
-"index.html": "62a52d1c0f81f26243897e83f966c021",
-"/": "62a52d1c0f81f26243897e83f966c021",
-"main.dart.js": "66144a85f66cc95da0a82d4b23ab9b62",
+"index.html": "ebb55bc0f18a6513e8481c5e55626586",
+"/": "ebb55bc0f18a6513e8481c5e55626586",
+"main.dart.js": "44b62c75063f8e67f43c0d6ca12086d4",
 "manifest.json": "879861a79fd134918644cbe2c4174f43",
 "version.json": "81cf56d652a5222d63d734359b13e2db"
 };
@@ -32,10 +34,8 @@ const RESOURCES = {
 // The application shell files that are downloaded before a service worker can
 // start.
 const CORE = [
-  "/",
-"main.dart.js",
+  "main.dart.js",
 "index.html",
-"assets/NOTICES",
 "assets/AssetManifest.json",
 "assets/FontManifest.json"];
 // During install, the TEMP cache is populated with the application shell files.
@@ -134,9 +134,11 @@ self.addEventListener("fetch", (event) => {
     .then((cache) =>  {
       return cache.match(event.request).then((response) => {
         // Either respond with the cached resource, or perform a fetch and
-        // lazily populate the cache.
+        // lazily populate the cache only if the resource was successfully fetched.
         return response || fetch(event.request).then((response) => {
-          cache.put(event.request, response.clone());
+          if (response && Boolean(response.ok)) {
+            cache.put(event.request, response.clone());
+          }
           return response;
         });
       })
